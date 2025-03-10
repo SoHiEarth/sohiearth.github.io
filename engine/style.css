@@ -1,55 +1,151 @@
 /* Colors */
 :root {
-  --color-background-1: #1e1e1e;
-  --color-background-2: #2e2e3a;
+  --color-background: rgba(30, 30, 30, 0.8);
+  --color-accent: rgba(50, 50, 200, 0.8); /* storm blue */
+  --color-navbar: rgba(30, 30, 30, 0.8);
   --color-title-1: #cacaca; /* For the canadians! */
   --color-title-2: #3e3e3e;
   --color-warning-body-1: #3e1e1e;
   --color-warning-body-2: #2a1e1e;
   --color-warning-head: #ff0000;
   --color-warning-content: #ff0000;
+  /* blue */
+  --color-promises-background-1: rgba(50, 50, 200, 0.5);
+  --color-promises-background-2: rgba(30, 30, 30, 0.6);
+  --color-promises-title-1: rgba(200, 200, 200, 0.8);
+  --color-promises-title-2: rgba(100, 100, 100, 0.6);
+  --color-promises-content-1: #3e3e6e;
+  --color-promises-content-2: #3e3e7e;
+  --border-radius: 5px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-image: linear-gradient(var(--color-background-1), var(--color-background-2));
-  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* background-image: linear-gradient(90deg, var(--color-background), var(--color-accent)); */
+  background-image: url("background.png");
+  font-family: "Work Sans", BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  z-index: 0;
+  margin: 1rem;
+}
+
+#navbar {
+  font-family: "IBM Plex Mono", BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;  /* Ensures it stretches but respects viewport */
+  margin: 0 auto;  /* Centers if necessary */
+  padding-left: 4rem;
+  padding-right: 4rem;
+  height: 3rem;
+  box-sizing: border-box;
+  background-color: var(--color-navbar);
+  color: var(--color-title-1);
+  justify-content: space-between;
+  backdrop-filter: blur(20px) saturate(150%);
+  display: flex;
+  align-items: center;
+  max-width: 100%; /* Ensures it doesn't exceed viewport */
+}
+
+#navbar a {
+  color: var(--color-title-1);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+#navbar a:hover {
+  color: var(--color-accent);
+}
+
+#title-content {
+  backdrop-filter: blur(10px) brightness(0.7);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  z-index: 1;
+  position: relative;
+  font-size: 60px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 5rem; /* Ensures it doesn't overlap with navbar */
 }
 
 #title {
+  font-weight: 600;
   background-image: linear-gradient(var(--color-title-1), var(--color-title-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-  color: var(--color-title-1);
   text-align: center;
+  color: transparent;
   letter-spacing: -0.025em;
   font-size: 60px;
+  transition: font-weight 0.5s ease;
+}
+
+#title:hover {
+  font-weight: 300;
 }
 
 #subtitle {
-  background-image: linear-gradient(var(--color-title-1), var(--color-title-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  color: var(--color-title-2);
+  color: rgba(150, 150, 150, 0.8);
+  font-weight: 400;
   text-align: center;
   font-size: 30px;
 }
 
 #warning {
-  
   background-image: linear-gradient(var(--color-warning-body-1), var(--color-warning-body-2));
-  margin: 1rem;
   padding: 1rem;
-  border-radius: 5px;
+  margin: 5rem;
+  border-radius: var(--border-radius);
 }
 
 #warning-head {
+  font-size: 30px;
   color: var(--color-warning-head);
 }
 
 #warning-content {
   color: var(--color-warning-content);
+}
+
+#promises {
+  background-image: linear-gradient(var(--color-promises-background-1), var(--color-promises-background-2));
+  backdrop-filter: blur(5px) saturate(150%);
+  padding: 1rem;
+  margin: 5rem;
+  border-radius: var(--border-radius);
+}
+
+#promises-header {
+  background-image: linear-gradient(var(--color-promises-title-1), var(--color-promises-title-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  color: var(--color-promises-title-1);
+  letter-spacing: -0.025em;
+  font-size: 50px;
+  transition: padding-left 0.3s ease;
+}
+
+#promises-header:hover {
+  padding-left: 4rem;
+}
+
+#promises-content {
+  background-image: linear-gradient(var(--color-promises-content-1), var(--color-promises-content-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  color: var(--color-promises-content-1);
+  text-align: center;
+  font-size: 30px;
 }
