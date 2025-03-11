@@ -1,0 +1,54 @@
+:root {
+  --color-background: rgba(30, 30, 30, 0.8);
+  --color-accent: rgba(100, 100, 200, 0.8);
+  --color-navbar: rgba(30, 30, 30, 0.8);
+  --border-radius: 5px;
+}
+
+h1 {
+  font-family: "Work Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Arial;
+}
+
+#hey {
+  margin-top: 4rem;
+}
+
+p {
+  font-family: "Work Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Arial;
+}
+
+a {
+  font-family: "Work Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Arial;
+}
+
+#navbar {
+  font-family: "IBM Plex Mono", BlinkMacSystemFont, -apple-system, "Segoe UI", Arial;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 3rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  box-sizing: border-box;
+  align-items: center;
+  max-width: 100%;
+  justify-content: space-between;
+  backdrop-filter: blur(20px) saturate(150%);
+  display: flex;
+  background-color: var(--color-navbar);
+  color: var(--color-title-1);
+}
+
+#navbar a {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: font-weight 0.5s ease;
+}
+
+#navbar a:hover {
+  font-weight: 200;
+}
