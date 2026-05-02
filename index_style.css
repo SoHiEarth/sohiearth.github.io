@@ -52,6 +52,9 @@ html {
 
 .projects {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   scroll-snap-align: start;
   scroll-margin-top: 4rem;
 }
@@ -62,44 +65,59 @@ html {
   margin-bottom: 2rem;
 }
 
+
 .project {
   border-radius: 2rem;
   border: 1px solid var(--nord10);
+  background-color: var(--nord1);
   padding: 2rem;
   margin: 2rem 0;
   transition: transform 0.2s ease, border-color 0.2s ease;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 2rem;
+  align-items: start;
 }
 
 .project:hover {
-  /* scale up a bit on hover */
   transform: scale(1.02);
   border-color: var(--nord9);
 }
 
+/* On wider screens place image and content side-by-side
+   while keeping the title full-width above them */
+@media (min-width: 1024px) {
+  .project {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "title title title"
+      "image content link";
+  }
+  .project-title { grid-area: title; }
+  .project-image { grid-area: image; }
+  .project-content { grid-area: content; }
+  .project-link { grid-area: link; }
+}
+
 .project-title {
   color: var(--nord8);
-  margin: 0;
-  margin-bottom: 0.5rem;
 }
 
 .project-image {
-  display: block;
   width: 100%;
-  max-width: 500px;
+  max-width: 420px;
   border-radius: 1rem;
-  margin: 1rem 0;
 }
 
 .project-content {
   color: var(--nord4);
-  margin: 0;
 }
 
 .project-link {
   color: var(--nord7);
   text-decoration: none;
-  float: right;
   transition: color 0.2s ease, transform 0.2s ease;
+  margin-top: 1rem;
 }
 
 .project-link:hover {
