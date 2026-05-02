@@ -154,11 +154,10 @@ html {
 .contact {
   padding: 2rem;
   scroll-snap-align: start;
-  scroll-margin-top: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80vh;
+  height: 100vh;
 }
 
 .contact-title {
