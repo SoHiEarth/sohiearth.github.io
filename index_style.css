@@ -1,0 +1,174 @@
+@import "navbar.css";
+@import "style.css";
+@import "font.css";
+@import "nord.css";
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+:root {
+  background-color: var(--nord0);
+}
+
+.intro {
+  margin-top: 0rem;
+  padding: 2rem;
+  height: 100vh;
+  /* center content vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-margin-top: 4rem;
+}
+
+.intro-decoration, .projects-decoration, .contact-decoration {
+  color: var(--nord8);
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  margin-bottom: -0.5rem;
+  transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.intro-decoration:hover, .projects-decoration:hover, .contact-decoration:hover {
+  color: var(--nord6);
+  transform: translateX(10px);
+}
+
+.intro-title {
+  color: var(--nord5);
+  line-height: 1.05;
+  letter-spacing: -0.05rem;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+}
+
+.intro-description {
+  color: var(--nord4);
+  font-size: clamp(1.25rem, 3vw, 1rem);
+}
+
+.projects {
+  padding: 2rem;
+  scroll-snap-align: start;
+  scroll-margin-top: 4rem;
+}
+
+.projects-title {
+  color: var(--nord5);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  margin-bottom: 2rem;
+}
+
+.project {
+  border-radius: 2rem;
+  border: 1px solid var(--nord10);
+  padding: 2rem;
+  margin: 2rem 0;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project:hover {
+  /* scale up a bit on hover */
+  transform: scale(1.02);
+  border-color: var(--nord9);
+}
+
+.project-title {
+  color: var(--nord8);
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 1rem;
+  margin: 1rem 0;
+}
+
+.project-content {
+  color: var(--nord4);
+  margin: 0;
+}
+
+.project-link {
+  color: var(--nord7);
+  text-decoration: none;
+  float: right;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project-link:hover {
+  color: var(--nord9);
+  transform: translateX(5px);
+}
+
+.more-projects-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.more-project-title {
+  color: var(--nord8);
+  margin: 0;
+}
+
+.more-project-content {
+  color: var(--nord4);
+  margin: 0;
+}
+
+.more-project-content a {
+  color: var(--nord7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.more-project-content a:hover {
+  color: var(--nord9);
+}
+
+.contact {
+  padding: 2rem;
+  scroll-snap-align: start;
+  scroll-margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+}
+
+.contact-title {
+  color: var(--nord5);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  margin-bottom: 1rem;
+}
+
+.contact-content {
+  color: var(--nord4);
+  margin-left: 1rem;
+}
+
+.contact-content a {
+  color: var(--nord7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-content a:hover {
+  color: var(--nord9);
+}
+
+#footer {
+  color: var(--nord4);
+  background-color: var(--nord1);
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
+  margin: 0 1rem;
+}
