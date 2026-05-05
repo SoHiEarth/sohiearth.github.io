@@ -1,0 +1,30 @@
+:root {
+  color-scheme: light dark;
+  --primary-color: black;
+  --secondary-color: rgb(100, 100, 100);
+  --background-color: white;
+  --background-color-secondary: rgb(220, 220, 220);
+  --background-color-secondary-transparent: rgba(220, 220, 220, 0.5);
+  --accent-color: rgb(210, 110, 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: white;
+    --secondary-color: rgb(170, 170, 170);
+    --background-color: black;
+    --background-color-secondary: rgb(30, 30, 30);
+    --background-color-secondary-transparent: rgba(30, 30, 30, 0.5);
+    --accent-color: rgb(240, 135, 0);
+  }
+  img {
+    filter: brightness(0.9) contrast(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

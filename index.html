@@ -4,9 +4,10 @@
     <title>SoHiEarth</title>
     <style>  
       @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
     </style>
     <link rel="stylesheet" href="index_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body class="barlow-regular">
     <header class="navbar" class="barlow-regular">
@@ -14,72 +15,48 @@
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </header>
-    <div class="intro" class="barlow-regular">
-      <p class="intro-decoration">// About</p>
-      <h1 class="intro-title work-sans-bold">SoHiEarth</h1>
+    <div id="intro" class="intro" class="barlow-regular">
+      <p class="intro-decoration">About</p>
+      <h1 class="intro-title stack-sans-text-bold">SoHiEarth.</h1>
       <div class="intro-description">
         <p>C++ Developer.</p>
         <p>Currently working on... a new project.</p>
       </div>
     </div>
 
-    <div class="projects" class="barlow-regular">
-      <p class="projects-decoration">// Projects</p>
-      <h2 class="projects-title work-sans-bold">My Résumé</h2>
-      <div class="project dying-anima">
-        <h2 class="project-title">Dying Anima</h2>
-        <img src="https://github.com/SoHiEarth/dying-anima/blob/f69f7f76096557daa3ad3a43d9edc28c457ca5c3/docs/assets/banner.png?raw=true" alt="Dying Anima Banner" class="project-image">
-        <div class="project-categories-container">
-          <span class="project-category">C++</span>
-          <span class="project-category">Game</span>
-          <span class="project-category">In Development</span>
-        </div>
-        <p class="project-content">A story about Death and Immortality.</p>
-        <a href="https://github.com/SoHiEarth/dying-anima" target="_blank" class="project-link">→ Learn More</a>
-      </div>
+    <div id="projects" class="projects" class="barlow-regular">
+      <p class="projects-decoration">Projects</p>
+      <h2 class="projects-title stack-sans-text-bold">My Résumé.</h2>
+      <div class="projects-container">
+        <a class="project dying-anima" href="https://github.com/SoHiEarth/dying-anima" target="_blank">
+          <h2 class="project-title stack-sans-text-bold">Dying Anima</h2>
+          <p class="project-content">A story about Death and Immortality. Built on a custom engine made from scratch.</p>
+          <img src="https://github.com/SoHiEarth/dying-anima/blob/f69f7f76096557daa3ad3a43d9edc28c457ca5c3/docs/assets/banner.png?raw=true" alt="Dying Anima Banner" class="project-image">
+        </a>
 
-      <div class="project vibrant">
-        <h2 class="project-title">Vibrant</h2>
-        <img src="https://github.com/SoHiEarth/vibrant/blob/2f0704a8f34965f7e9bee24b9616733d9ee9030e/docs/screenshot.png?raw=true" alt="Vibrant Banner" class="project-image">
-        <div class="project-categories-container">
-          <span class="project-category">C++</span>
-          <span class="project-category">Graphics</span>
-        </div>
-        <p class="project-content">A rendering engine focused on 2D lighting and the use of normals to create beautiful scenes.</p>
-        <a href="https://github.com/SoHiEarth/vibrant" target="_blank" class="project-link">→ Learn More</a>
-      </div>
+        <a class="project vibrant" href="https://github.com/SoHiEarth/vibrant" target="_blank">
+          <h2 class="project-title stack-sans-text-bold">Vibrant</h2>
+          <p class="project-content">A rendering engine focused on 2D lighting and the use of normals to create beautiful scenes.</p>
+          <img src="https://github.com/SoHiEarth/vibrant/blob/2f0704a8f34965f7e9bee24b9616733d9ee9030e/docs/screenshot.png?raw=true" alt="Vibrant Banner" class="project-image">
+        </a>
 
-      <div class="project virtus">
-        <h2 class="project-title">Virtus</h2>
-        <img src="https://github.com/SoHiEarth/virtus/blob/d7bbdfa9af336d876964ae082d409f8632fc8e02/assets/logo.png?raw=true" alt="Virtus Banner" class="project-image">
-        <div class="project-categories-container">
-          <span class="project-category">C++</span>
-          <span class="project-category">TUI</span>
-        </div>
-        <p class="project-content">A TUI minimal assignment manager + grade tracker.</p>
-        <a href="https://github.com/SoHiEarth/virtus" target="_blank" class="project-link">→ Learn More</a>
-      </div>
+        <a class="project virtus" href="https://github.com/SoHiEarth/virtus" target="_blank">
+          <h2 class="project-title stack-sans-text-bold">Virtus</h2>
+          <p class="project-content">A minimalistic, TUI assignment manager + IB compatible grade tracker.</p>
+          <img src="https://github.com/SoHiEarth/virtus/blob/d7bbdfa9af336d876964ae082d409f8632fc8e02/assets/logo.png?raw=true" alt="Virtus Banner" class="project-image">
+        </a>
 
-      <div class="project excuses">
-        <h2 class="project-title">Excuses</h2>
-        <img src="https://github.com/SoHiEarth/excuses/blob/11754642111928e2d96aaa726060e1be9e1a738b/docs/cli_home.png?raw=true" alt="Excuses Banner" class="project-image">
-        <p class="project-content">The Random Excuse Generator. A simple CLI tool that generates random excuses for various situations.</p>
-        <a href="https://github.com/SoHiEarth/excuses" target="_blank" class="project-link">→ Learn More</a>
-        <div class="project-categories-container">
-          <span class="project-category">C++</span>
-          <span class="project-category">CLI</span>
-        </div>
-      </div>
-
-      <div class="more-projects-container">
-        <h2 class="more-project-title">More Projects</h2>
-        <p class="more-project-content">Check out more projects on my <a href="https://github.com/SoHiEarth" target="_blank">GitHub Profile</a>.</p>
+        <a class="project excuses" href="https://github.com/SoHiEarth/excuses" target="_blank">
+          <h2 class="project-title stack-sans-text-bold">Excuses</h2>
+          <p class="project-content">A simple CLI tool that generates random excuses for various situations.</p>
+          <img src="https://github.com/SoHiEarth/excuses/blob/11754642111928e2d96aaa726060e1be9e1a738b/docs/cli_home.png?raw=true" alt="Excuses Banner" class="project-image">
+        </a>
       </div>
     </div>
 
-    <div class="contact">
-      <p class="contact-decoration">// Contact</p>
-      <h2 class="contact-title work-sans-bold">Get in Touch</h2>
+    <div id="contact" class="contact">
+      <p class="contact-decoration">Contact</p>
+      <h2 class="contact-title stack-sans-text-bold">Get in Touch.</h2>
       <p class="contact-content">
         Feel free to reach out to me via Discord here: <a href="https://discord.com/users/987678634678550548" target="_blank">SoHiEarth</a>.
       </p>

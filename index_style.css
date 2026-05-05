@@ -1,7 +1,7 @@
 @import "navbar.css";
 @import "style.css";
 @import "font.css";
-@import "nord.css";
+@import "colors.css";
 
 html {
   scroll-snap-type: y mandatory;
@@ -9,24 +9,16 @@ html {
 }
 
 :root {
-  background-color: var(--nord0);
+  background-color: var(--background-color);
 }
 
 .intro {
   margin-top: 0rem;
-  padding: 2rem;
-  height: 100vh;
-  /* center content vertically */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  scroll-snap-align: start;
-  scroll-margin-top: 4rem;
 }
 
 .intro-decoration, .projects-decoration, .contact-decoration {
-  color: var(--nord8);
-  font-size: 1rem;
+  color: var(--accent-color);
+  font-size: clamp(2rem, 3vw, 1.5rem);
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   margin-bottom: -0.5rem;
@@ -34,20 +26,20 @@ html {
 }
 
 .intro-decoration:hover, .projects-decoration:hover, .contact-decoration:hover {
-  color: var(--nord6);
+  color: var(--secondary-color);
   transform: translateX(10px);
 }
 
 .intro-title {
-  color: var(--nord5);
+  color: var(--primary-color);
   line-height: 1.05;
   letter-spacing: -0.05rem;
-  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-size: clamp(4rem, 6vw, 8rem);
 }
 
 .intro-description {
-  color: var(--nord4);
-  font-size: clamp(1.25rem, 3vw, 1rem);
+  color: var(--secondary-color);
+  font-size: clamp(1.25rem, 2vw, 3rem);
 }
 
 .projects {
@@ -55,155 +47,134 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100svh;
   scroll-snap-align: start;
   scroll-margin-top: 4rem;
-  margin-bottom: 4rem;
 }
 
 .projects-title {
-  color: var(--nord5);
-  font-size: clamp(2.5rem, 5vw, 5rem);
+  color: var(--primary-color);
+  font-size: clamp(4rem, 6vw, 8rem);
   margin-bottom: 2rem;
 }
 
+/* Carousel of projects */
+.projects-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 2rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-container:hover .project {
+  filter: blur(10px);
+  opacity: 0.5;
+}
+
+.projects-container .project:hover {
+  filter: blur(0);
+  opacity: 1;
+  transform: translateY(-10px);
+  background-position: 100%;
+  z-index: 1;
+}
 
 .project {
-  border-radius: 2rem;
-  border: 1px solid var(--nord10);
-  background-color: var(--nord1);
-  padding: 2rem;
-  margin: 2rem 0;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem 2rem;
-  align-items: start;
-}
-
-.project:hover {
-  transform: scale(1.02);
-  border-color: var(--nord9);
-  box-shadow: 0 0 0.5rem black;
-}
-
-/* On wider screens place image and content side-by-side
-   while keeping the title full-width above them */
-@media (min-width: 1024px) {
-  .project {
-    grid-template-columns: auto 1fr;
-    grid-template-areas:
-      "title title title"
-      "image content link"
-      "categories content link";
-  }
-  .project-title { grid-area: title; }
-  .project-categories-container { grid-area: categories; }
-  .project-image { grid-area: image; }
-  .project-content { grid-area: content; }
-  .project-link { grid-area: link; }
+  flex: 0 0 auto;
+  width: clamp(16rem, 80vw, 20rem);
+  border: 0.5px solid var(--secondary-color);
+  background-size: 200%;
+  background-image: linear-gradient(135deg, var(--background-color), var(--background-color), var(--accent-color));
+  padding: 40px;
+  transition:
+    background-position 0.2s ease,
+    transform 0.2s ease,
+    filter 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  text-decoration: none;
+  scroll-snap-align: start;
+  overflow: hidden;
 }
 
 .project-title {
-  color: var(--nord8);
+  font-size: clamp(2rem, 2vw, 6rem);
+  color: var(--primary-color);
 }
 
 .project-image {
   width: 100%;
-  max-width: 420px;
+  height: auto;
   border-radius: 1rem;
 }
 
-.project-categories-container {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.project-category {
-  background-color: var(--nord3);
-  color: var(--nord6);
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-}
-
 .project-content {
-  color: var(--nord4);
-}
-
-.project-link {
-  color: var(--nord7);
-  text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
-  margin-top: 1rem;
-}
-
-.project-link:hover {
-  color: var(--nord9);
-  transform: translateX(5px);
-}
-
-.more-projects-container {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.more-project-title {
-  color: var(--nord8);
-  margin: 0;
-}
-
-.more-project-content {
-  color: var(--nord4);
-  margin: 0;
-}
-
-.more-project-content a {
-  color: var(--nord7);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.more-project-content a:hover {
-  color: var(--nord9);
+  color: var(--secondary-color);
 }
 
 .contact {
-  padding: 2rem;
-  scroll-snap-align: start;
-  scroll-margin-top: 0rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 100svh;
 }
 
 .contact-title {
-  color: var(--nord5);
-  font-size: clamp(2.5rem, 5vw, 5rem);
+  color: var(--primary-color);
+  font-size: clamp(4rem, 6vw, 8rem);
   margin-bottom: 1rem;
 }
 
 .contact-content {
-  color: var(--nord4);
+  color: var(--secondary-color);
+  font-size: clamp(1.25rem, 2vw, 3rem);
   margin-left: 1rem;
 }
 
 .contact-content a {
-  color: var(--nord7);
+  color: var(--accent-color);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .contact-content a:hover {
-  color: var(--nord9);
+  color: var(--accent-color);
 }
 
 #footer {
-  color: var(--nord4);
-  background-color: var(--nord1);
+  color: var(--secondary-color);
+  background-color: var(--background-color-secondary);
   border-radius: 1rem;
   text-align: center;
   padding: 1rem;
-  margin: 0 1rem;
+  margin: 1rem;
+}
+
+.intro, .projects, .contact {
+  scroll-snap-align: start;
+  scroll-margin-top: 0rem;
+  padding: 2rem;
+  height: 100svh;
+  margin: 0;
+
+  /* center content vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .intro,
+  .projects,
+  .contact {
+    padding: 1rem;
+  }
 }

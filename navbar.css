@@ -1,29 +1,32 @@
-@import "nord.css";
+@import "colors.css";
 
 .navbar {
   position: fixed;
   z-index: 1000;
-  top: 0rem;
-  left: 0rem;
-  right: 0rem;
-  padding: 0rem 4rem;
-  height: 4rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 2rem;
+  min-height: 7vh;
   box-sizing: border-box;
-  justify-content: space-between;
   display: flex;
   align-items: center;
-  background-color: rgba(59, 66, 82, 0.5); /* nord1 with 80% opacity */
+  justify-content: space-between;
+  background-color: var(--background-color-secondary-transparent);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--nord10);
+  border-bottom: 1px solid var(--secondary-color);
 }
 
 .navbar a {
-  color: var(--nord5);
+  color: var(--primary-color);
   text-decoration: none;
   transition: color 0.2s ease;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Stack Sans Text", sans-serif;
+  font-size: clamp(1rem, 3vw, 1.25rem);
 }
 
-.navbar a:hover {
-  color: var(--nord8);
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
 }
