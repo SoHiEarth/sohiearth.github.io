@@ -1,20 +1,28 @@
 @import "colors.css";
 
+/* center within navbar and space out links */
 .navbar {
   position: fixed;
   z-index: 1000;
   top: 0;
   left: 0;
   right: 0;
-  padding: 0.5rem 2rem;
-  min-height: 7vh;
-  box-sizing: border-box;
+  padding: 0.1rem 0;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  min-height: 5vh;
   background-color: var(--background-color-secondary-transparent);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--secondary-color);
+  backdrop-filter: blur(30px);
+}
+
+.navbar-content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50vw;
 }
 
 .navbar a {
@@ -22,11 +30,18 @@
   text-decoration: none;
   transition: color 0.2s ease;
   font-family: "Stack Sans Text", sans-serif;
-  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 300;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
 @media (max-width: 768px) {
   .navbar {
     padding: 0.5rem 1rem;
+    min-height: 7vh;
+  }
+  .navbar-content {
+    width: 90vw;
+    overflow-x: auto;
+    gap: 1rem;
   }
 }

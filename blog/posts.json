@@ -1,0 +1,21 @@
+[
+  {
+    "filename": "started-posts/index.html",
+    "title": "Started Posts",
+    "date": "2026-06-10 12:00:00",
+    "description": "A short example post to demonstrate the blog loader.",
+    "embed": "https://open.spotify.com/embed/track/6mWZniEb4cZCTDJSfJE5ol?utm_source=generator&si=143cf15e1eca4b6d"
+  },
+  {
+    "filename": "started-posts/index.html",
+    "title": "Placeholder Post 2",
+    "date": "2026-06-10 13:00:00",
+    "description": "Another short example post to demonstrate the blog loader."
+  },
+  {
+    "filename": "started-posts/index.html",
+    "title": "Placeholder Post 3",
+    "date": "2026-06-10 14:00:00",
+    "description": "Yet another short example post to demonstrate the blog loader."
+  }
+]

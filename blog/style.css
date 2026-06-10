@@ -1,0 +1,96 @@
+@import "../navbar.css";
+@import "../font.css";
+@import "../colors.css";
+@import "../project.css";
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+:root {
+  background-color: var(--background-color);
+}
+
+.intro {
+  margin-top: 0rem;
+}
+
+.section-decoration {
+  color: var(--accent-color);
+  font-size: clamp(2rem, 3vw, 1.5rem);
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  margin-bottom: -0.5rem;
+  transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.section-decoration:hover {
+  color: var(--secondary-color);
+  transform: translateX(10px);
+}
+
+.section-title {
+  color: var(--primary-color);
+  line-height: 1.05;
+  letter-spacing: -0.05rem;
+  font-size: clamp(4rem, 6vw, 8rem);
+  margin-bottom: 1rem;
+}
+
+.intro-description {
+  color: var(--secondary-color);
+  font-size: clamp(1.25rem, 2vw, 3rem);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-content {
+  color: var(--secondary-color);
+  font-size: clamp(1.25rem, 2vw, 3rem);
+  margin-left: 1rem;
+}
+
+.contact-content a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-content a:hover {
+  color: var(--accent-color);
+}
+
+#footer {
+  color: var(--secondary-color);
+  background-color: var(--background-color-secondary);
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.scroll-snap {
+  scroll-snap-align: start;
+  scroll-margin-top: 0rem;
+  padding: 2rem;
+  height: 100svh;
+  margin: 0;
+
+  /* center content vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .intro,
+  .projects,
+  .contact {
+    padding: 1rem;
+  }
+}

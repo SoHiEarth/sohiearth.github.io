@@ -12,7 +12,7 @@
   :root {
     --primary-color: white;
     --secondary-color: rgb(170, 170, 170);
-    --background-color: black;
+    --background-color: rgb(10, 10, 10);
     --background-color-secondary: rgb(30, 30, 30);
     --background-color-secondary-transparent: rgba(30, 30, 30, 0.5);
     --accent-color: rgb(240, 135, 0);

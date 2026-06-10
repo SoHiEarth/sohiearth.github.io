@@ -6,27 +6,33 @@
       @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
     </style>
-    <link rel="stylesheet" href="index_style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body class="barlow-regular">
     <header class="navbar" class="barlow-regular">
-      <a href="#intro">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <div class="navbar-content">
+        <a href="#intro">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
     </header>
-    <div id="intro" class="intro" class="barlow-regular">
-      <p class="intro-decoration">About</p>
-      <h1 class="intro-title stack-sans-text-bold">SoHiEarth.</h1>
+
+    <div class="intro scroll-snap">
+      <p class="section-decoration">About</p>
+      <h1 class="section-title stack-sans-text-bold">SoHiEarth.</h1>
       <div class="intro-description">
         <p>C++ Developer.</p>
         <p>Currently working on... a new project.</p>
       </div>
     </div>
 
-    <div id="projects" class="projects" class="barlow-regular">
-      <p class="projects-decoration">Projects</p>
-      <h2 class="projects-title stack-sans-text-bold">My Résumé.</h2>
+    <div class="projects scroll-snap">
+      <p class="section-decoration">Projects</p>
+      <h2 class="section-title stack-sans-text-bold">My Résumé.</h2>
       <div class="projects-container">
         <a class="project dying-anima" href="https://github.com/SoHiEarth/dying-anima" target="_blank">
           <h2 class="project-title stack-sans-text-bold">Dying Anima</h2>
@@ -54,9 +60,15 @@
       </div>
     </div>
 
-    <div id="contact" class="contact">
-      <p class="contact-decoration">Contact</p>
-      <h2 class="contact-title stack-sans-text-bold">Get in Touch.</h2>
+    <div class="blog scroll-snap">
+      <p class="section-decoration">Blogstagram</p>
+      <h2 class="section-title stack-sans-text-bold">Recent Posts.</h2>
+      <div class="posts"></div>
+    </div>
+
+    <div class="contact scroll-snap">
+      <p class="section-decoration">Contact</p>
+      <h2 class="section-title stack-sans-text-bold">Get in Touch.</h2>
       <p class="contact-content">
         Feel free to reach out to me via Discord here: <a href="https://discord.com/users/987678634678550548" target="_blank">SoHiEarth</a>.
       </p>
@@ -64,7 +76,7 @@
         Or you can reach me via GitHub: <a href="https://github.com/SoHiEarth" target="_blank">SoHiEarth</a>.
       </p>
     </div>
-    <footer id="footer" class="barlow-regular">
+    <footer id="footer">
       <p>© 2026 SoHiEarth. All rights reserved.</p>
     </footer>
   </body>
